@@ -15,7 +15,7 @@ func StartSSH(conf *config.Config) error {
 
 	options := []ssh.Option{
 		ssh.HostKeyFile(conf.PrivateKey),
-		ssh.PasswordAuth(passwordHandler),
+		// ssh.PasswordAuth(passwordHandler),
 	}
 
 	log.Infof("Start SSH Server at %s", conf.ServeAddr)
