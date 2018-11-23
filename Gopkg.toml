@@ -1,0 +1,19 @@
+[[override]]
+  name = "k8s.io/api"
+  version = "kubernetes-1.12.2"
+
+[[override]]
+  name = "k8s.io/apimachinery"
+  version = "kubernetes-1.12.2"
+
+[[override]]
+  name = "k8s.io/client-go"
+  version = "kubernetes-1.12.2"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/op/go-logging"
+  
+[[constraint]]
+  name = "github.com/docker/docker"
+  version = "17.03.2-ce"

@@ -18,6 +18,8 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/shenshouer/k8s-ssh-pod/config"
+	"github.com/shenshouer/k8s-ssh-pod/ssh"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -30,7 +32,12 @@ var RootCmd = &cobra.Command{
 	Short: "A brief description of your application",
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
-	Run: func(cmd *cobra.Command, args []string) {},
+	Run: func(cmd *cobra.Command, args []string) {
+		if err := ssh.StartSSH(config.GetConfig()); err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+	},
 }
 
 // Execute adds all child commands to the root command sets flags appropriately.

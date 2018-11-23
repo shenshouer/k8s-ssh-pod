@@ -14,8 +14,14 @@
 
 package main
 
-import "github.com/shenshouer/k8s-ssh-pod/cmd"
+import (
+	"github.com/shenshouer/k8s-ssh-pod/cmd"
+	"github.com/shenshouer/k8s-ssh-pod/log"
+)
+
+var Version = "master"
 
 func main() {
+	log.Infof("Current Version: %s", Version)
 	cmd.Execute()
 }
